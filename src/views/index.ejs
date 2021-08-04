@@ -1,18 +1,49 @@
 
   <%- include('partials/_header'); %>
-
-
+  
     <div class="container">
        <div class="row">
-        <<!-- Formulario -->
+        <!-- Formulario -->
         <div class="col-md-5">
             <div class="card">
-                
+                <div class="card-body">
+                    <form action="/add" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="title" placeholder="inserte un titulo" class="form-control"></imput>
+                        </div>
+                        <div class="form-group">
+                            <input type="textarea" name="descripcion" cols="80" placeholder="inserte una descripcion" class="form-control"></imput>
+                        </div>
+                        <button type="submit" class="btn btn-primary" >agregar</button>
+                    </form>
+                </div>
             </div>
         </div>
         <!-- lista-->
         <div class="col-md-7">
-
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <th>No</th>
+                    <th>Titulo</th>
+                    <th>Descripcion</th>
+                    <th>operacion</th>
+                </thead>
+                <tbody>
+                    <% for(var i = 0 ; i < tasks.length ; i++ ) { %>
+                        <tr>
+                            <td><%= i + 1 %> </td>
+                            <td><%= tasks[i].title %> </td>
+                            <td><%= tasks[i].descripcion %> </td>
+                            <td>
+                                <a href="" class="btn btn-dark">Done</a>
+                                <a href="" class="btn btn-danger">Delete</a>
+                                <a href="" class="btn btn-info">edit</a>
+                            </td>
+                        </tr>
+                        
+                    <% } %>
+                </tbody>
+            </table>
         </div>
         </div>
 
