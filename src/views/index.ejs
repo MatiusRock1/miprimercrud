@@ -35,8 +35,8 @@
                             <td><%= tasks[i].title %> </td>
                             <td><%= tasks[i].descripcion %> </td>
                             <td>
-                                <a href="" class="btn btn-dark">Done</a>
-                                <a href="" class="btn btn-danger">Delete</a>
+                                <a href="/turn/<%= tasks[i]._id %>" class="btn <%= tasks[i].status ? 'btn-success' : 'btn-dark' %>">Done</a>
+                                <a href="/delete/<%= tasks[i]._id %>" class="btn btn-danger">Delete</a>
                                 <a href="" class="btn btn-info">edit</a>
                             </td>
                         </tr>
